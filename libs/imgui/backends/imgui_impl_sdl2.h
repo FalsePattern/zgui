@@ -31,6 +31,10 @@ struct SDL_Renderer;
 struct _SDL_GameController;
 typedef union SDL_Event SDL_Event;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 // Follow "Getting Started" link and check examples/ folder to learn about using backends!
 IMGUI_IMPL_API bool     ImGui_ImplSDL2_InitForOpenGL(SDL_Window* window, void* sdl_gl_context);
 IMGUI_IMPL_API bool     ImGui_ImplSDL2_InitForVulkan(SDL_Window* window);
@@ -50,5 +54,9 @@ IMGUI_IMPL_API float    ImGui_ImplSDL2_GetContentScaleForDisplay(int display_ind
 // When using manual mode, caller is responsible for opening/closing gamepad.
 enum ImGui_ImplSDL2_GamepadMode { ImGui_ImplSDL2_GamepadMode_AutoFirst, ImGui_ImplSDL2_GamepadMode_AutoAll, ImGui_ImplSDL2_GamepadMode_Manual };
 IMGUI_IMPL_API void     ImGui_ImplSDL2_SetGamepadMode(ImGui_ImplSDL2_GamepadMode mode, struct _SDL_GameController** manual_gamepads_array = nullptr, int manual_gamepads_count = -1);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // #ifndef IMGUI_DISABLE
