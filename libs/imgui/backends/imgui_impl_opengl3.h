@@ -31,6 +31,10 @@
 #include "imgui.h"      // IMGUI_IMPL_API
 #ifndef IMGUI_DISABLE
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 // Follow "Getting Started" link and check examples/ folder to learn about using backends!
 IMGUI_IMPL_API bool     ImGui_ImplOpenGL3_Init(const char* glsl_version = nullptr);
 IMGUI_IMPL_API void     ImGui_ImplOpenGL3_Shutdown();
@@ -64,6 +68,11 @@ IMGUI_IMPL_API void     ImGui_ImplOpenGL3_UpdateTexture(ImTextureData* tex);
 // Otherwise imgui_impl_opengl3_loader.h will be used.
 #endif
 
+#endif
+
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif // #ifndef IMGUI_DISABLE
